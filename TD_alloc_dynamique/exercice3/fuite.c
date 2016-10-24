@@ -26,6 +26,7 @@ void addHead(char*s, int a) {
   tmp->age = a;
   tmp->suiv = tete;
   tete = tmp;
+
 }
 
 // Suppresion de la tete
@@ -35,6 +36,7 @@ void delHead() {
   if(tete!=NULL) {
   	Cell *tmp = tete;
   	tete = tete->suiv;
+  	free(tmp);
   }	
 }
 
@@ -55,6 +57,9 @@ int main() {
     delHead();
     addHead(nom,i);
   } 
+	for (int i=0;i<15;i++) {
+	  delHead();
+	}
    
   // On vérfie ....
   if (CHECK_reportLeak()==0) printf("Bravo !\n"); 
