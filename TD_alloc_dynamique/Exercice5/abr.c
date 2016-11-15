@@ -30,12 +30,7 @@ int supFils(ABR *r,char *s) {
   return 0;
 }
 
-void supNoeudFils (Cell * nf) {
-  if (nf->f != null) {
-     supRoot(nf->f);
-  }
-  free(nf);
-}
+
 
 /// Ajoute un fils à la liste chainee
 ajoutListe(Cell **head,ABR *fils) {
