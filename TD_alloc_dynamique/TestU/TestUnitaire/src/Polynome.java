@@ -1,120 +1,40 @@
 import java.util.Scanner;
-/**
- * <b>Polynome est une classe permettant de manipuler des polynômes</b>
- * <p>
- * Un Polynome est caractérisé par  :
- * <ul>
- * <li>le nombre de monômes</li>
- * <li>un tableau contenant les monômes : les monomes sont rangés par ordre décroissant de la valeur de l'exposant</li>
- * </ul>
- * </p>
- * <p>
- * Un polynôme implémente un ensemble de méthodes :
- * <li>ajouterMonome</li>
- * <li>lirePolynome</li>
- * <li>additionPolynome</li>
- * <li>multiplicationPolynome</li>
- * <li>deriverPolynome</li>
- * <li>comparerPolynome</li>
- * </p>
- * 
- * @author iut de lens
- * @version 1.0,Mai 2010
- */
+
 
 public class Polynome {
-    	/**
-    	 * TAILLEMIN. une constante.
-    	 * <p>
-    	 * Le nombre d'emplacements libres lors de l'agrandissement du tableau 
-    	 * </p>
-    	 */
 		private static final  int TAILLEMIN = 10; 
-        /**
-         * nbMonomes. Modifiable.
-         * <p>
-         * Le nombre de monomes contenus dans le polynome
-         * </p>
-         */
 		private int nbMonomes;
-        /**
-         * tab. Modifiable.
-         * <p>
-         * Un tableau contenant les références des monômes contenus dans le polynome
-         * </p>
-         */
 		private Monome [] tab; 
-        /**
-         * Constructeur polynome par défaut.
-         * <p>
-         * fait appel au constructeur Polynome(TAILLEMIN)
-         * </p>
-         * @see Polynome#Polynome(int)
-         */		
+		
 		public Polynome () {
 			this (TAILLEMIN);
 		}
-        /**
-         * Constructeur polynome.
-         * <p>
-         * A la construction d'un objet polynome :
-         *  <li>nbMonomes=0</li>
-         *  <li>tab référence un tableau de n éléments de type Monome
-         * </p>
-         * 
-         * @param n
-         *            le nombre maximal de Monomes
-         * @see Polynome#nbMonomes
-         * @see Polynome#tab
-         */	
+
 	 public Polynome (int n){
              tab = new Monome[n]; 
              nbMonomes=0;
 	 }
-        /**
-         * Retourne la position d'insertion du Monome m dans le polynome. 
-         * c'est à dire l'indice de la case où le monome doit être rangé.
-         * cette indice correspond à l'exposant du monome. La fonction retourne -1 
-         * si l'exposant est supérieur à la capacité du tableau
-         * @return la position d'insertion du Monome m dans le polynome.
-         * @param m
-         *            le monome destiné à être inserer 
-         * @see Polynome
-         * @see Polynome#nbMonomes
-         */
+	 
+	 public int getTaillemin() {
+		 return TAILLEMIN;
+	 }
+	 
+	 public int getNbMonomes() {
+		 return nbMonomes;
+	 }
+	 
+        
 		private int recherchePosition (Monome m) {
 			if (m.getExposant()<tab.length) return m.getExposant();
 			return -1;
 		}
 
-        /**
-         * Ajoute TAILLEMIN emplacements libres au polynome 
-         * @see Polynome#nbMonomes
-         * @see Polynome#tab
-         * @see Polynome#TAILLEMIN
-         */	
+
 		private void agrandirTab () {
-			// On ajoute TAILLEMIN cases supplémentaies
-			// A FAIRE
+		    int size = tab.length;
+	        tab = new Monome[size + TAILLEMIN];
 		}
-        /**
-         * Ajoute le monome m dans le polynome. Plusieurs cas possibles :
-         *  <li> si le polynome ne contient pas de monome de même degré </li>
-         *  <ul>
-         *  <li> alors le monome m est rangé dans le polynome en respectant l'ordre  </li>
-         *  <li> sinon (il existe un monome m' de même degré) </li>
-         *  <ul>
-         *  <li> suivant le résultat de la somme des coefficients m et m', on met à jour le coefficient de m' (somme!=0) ou on retire m' du polynome (somme=0)</li>
-         *  </ul>
-         *  </ul>
-         * @param m
-         *            le monome  à inserer 
-         * @see Polynome
-         * @see Polynome#nbMonomes
-         * @see Polynome#tab
-         * @see Polynome#recherchePosition(Monome)
-         * @see Polynome#agrandirTab()
-         */	
+        
 		public void ajouterMonome (Monome m) {
 			int position = recherchePosition(m);
 			if (position >= 0 ) {
@@ -140,24 +60,27 @@ public class Polynome {
 			}
 			
 		}
-        /**
-         * Cree un monome m de coefficient coef et de degré deg et l'ajoute dans le polynome
-         * @param coef
-         *             le coefficient du monome à inserer
-         * @param deg
-         * 				le degré du monome à ajouter 
-         *  @see Polynome#ajouterMonome(Monome)
-         */  
+        
 		public void ajouterMonome (double coef, int deg) {
 			Monome m = new Monome (coef,deg);
 			ajouterMonome(m);			
 		}
-        /**
-         * Initialisation d'un polynome. Les monomes sont saisis au clavier.
-         *  @see Polynome#ajouterMonome(Monome)
-         */
+       
 		public void lirePolynome (){
-			// A FAIRE ...
+	        int next = 1;
+	        while (next == 1) {
+	            Scanner sc1 = new Scanner(System.in);
+	            System.out.println("Coef :");
+	            int coef = Integer.parseInt(sc1.nextLine());
+	            Scanner sc2 = new Scanner(System.in);
+	            System.out.println("Exposant :");
+	            int deg = Integer.parseInt(sc2.nextLine());
+	            ajouterMonome(coef, deg);
+
+	            Scanner sc = new Scanner(System.in);
+	            System.out.println("Voule0z vous ajouter un monome (1/0) :");
+	            next = Integer.parseInt(sc.nextLine());
+	        }
 			
 		}
         /**
@@ -167,10 +90,8 @@ public class Polynome {
 	private void additionDansPolynome (Polynome p) {
            // A FAIRE            
 	}
-        /**
-         * Faire une copie du polynome. 
-         *  @return le polynome dupliqué
-         */
+     
+
 		private Polynome dupliquerPolynome () {
 			Polynome res = new Polynome(tab.length);
 			int i = 0, nbMonomesCopies = 0; 
@@ -183,57 +104,63 @@ public class Polynome {
 			}
 			return res;
 		}
-        /**
-         * Multiplie le polynome par un monome 
-         * @return le polynome résultat de la multiplication par le monome m
-         * @param m
-         *            le monome multiplicateur  
-         *  @see Polynome
-         *  @see Polynome#nbMonomes
-         *  @see Polynome#tab
-         */
-		private Polynome multiplierParMonome (Monome m) {
-			// A FAIRE		
-			return null;
-		}
-        /**
-         * Effectue l'addition du polynome courant et du polynome p 
-         * @return le polynome résultat de l'addition du polynome courant et du polynome p
-         * @param p
-         *         le polynome additionneur     
-         *  @see Polynome
-         *  @see Polynome#nbMonomes
-         *  @see Polynome#tab
-         */
-		public Polynome additionPolynome (Polynome p) {
 		
-                        // A FAIRE
-			return res; 
+		private Polynome multiplierParMonome (Monome m) {
+	        System.out.println("Multiplication par monome...");
+	        Polynome res = new Polynome();
+	        int i = 0;
+	        while (i < tab.length) {
+	            if (tab[i] != null) {
+	                double coef = tab[i].getCoefficient() * m.getCoefficient();
+	                int exp = tab[i].getExposant() + m.getExposant();
+	                res.ajouterMonome(new Monome(coef, exp));
+	            }
+	            i++;
+	        }
+	        return res;
 		}
-	     /**
-         * Effectue la multiplication du polynome courant et du polynome p 
-         * @return le polynome résultat de la multiplication du polynome courant et du polynome p
-         * @param p
-         *         le polynome multiplicateur     
-         *  @see Polynome
-         *  @see Polynome#nbMonomes
-         *  @see Polynome#tab
-         *  @see Polynome#multiplierParMonome(Monome)
-         *  @see Polynome#additionPolynome(Polynome)
-         */		
+       
+		public Polynome additionPolynome (Polynome p) {
+	        System.out.println("Addition de polynome...");
+	        Polynome res = new Polynome(tab.length);
+	        int i = 0;
+	        while (i < tab.length) {
+	            if (tab[i] != null) {
+	                if (tab[i].getExposant() == p.tab[i].getExposant()) {
+	                    res.ajouterMonome(new Monome(tab[i].getCoefficient() + p.tab[i].getCoefficient(), tab[i].getExposant()));
+	                }
+	            }
+	            i++;
+	        }
+	        return res; 
+		}
+	
 		public Polynome multiplicationPolynome (Polynome p) {
-			return null;
+	        Polynome poly = new Polynome(tab.length);
+	        for (int i = 0; i < this.tab.length; i++) {
+	            for (int j = 0; j < p.tab.length; j++) {
+	                if (tab[i] != null) {
+	                    if (p.tab[j] != null) {
+	                        poly.ajouterMonome(new Monome(p.tab[j].getCoefficient() * this.tab[i].getCoefficient(), p.tab[j].getExposant() + this.tab[i].getExposant()));
+	                    }
+	                }
+	            }
+	        }
+	        System.out.println(poly);
+	        return poly;
 		}
-	     /**
-         * Dérive le polynome courant
-         * @return le polynome dérivé
-         *  @see Polynome
-         *  @see Polynome#nbMonomes
-         *  @see Polynome#tab
-         */		
+
 		public Polynome deriverPolynome () {
-			// A FAIRE	
-			return null;
+			System.out.println("Dérivation de polynome...");
+	        Polynome res = new Polynome(tab.length);
+	        int i = 0;
+	        while (i < tab.length) {
+	            if (tab[i] != null) {
+	                res.ajouterMonome(new Monome(tab[i].getCoefficient() * tab[i].getExposant(), tab[i].getExposant() - 1));
+	            }
+	            i++;
+	        }
+	        return res;
 		}
 		public String toString () {
 			String res = "";
@@ -254,20 +181,12 @@ public class Polynome {
 			System.out.println(">"+res+"<");
 			return res;	
 		}
-	     /**
-         * Compare le polynome courant avec le polynome p
-         *  @return vrai si polynome courant et le polynome p sont identiques, faux sinon
-         *  @param p
-         *         le polynome comparateur
-         *  @see Polynome
-         *  @see Polynome#nbMonomes
-         *  @see Polynome#tab
-         */	
-		public boolean comparerPolynome (Polynome p){
 
-			// A FAIRE
-			return true;
+		public boolean comparerPolynome (Polynome p){
+	        return this.toString() == p.toString();
 			
 		}
 
 }
+
+ 
