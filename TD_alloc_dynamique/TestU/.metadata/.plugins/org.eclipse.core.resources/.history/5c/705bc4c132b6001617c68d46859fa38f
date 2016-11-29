@@ -1,0 +1,12 @@
+
+public class main {
+
+	public static void main(String[] args) {
+		Polynome p1 = new Polynome();
+		Polynome p2 = new Polynome(5);
+		
+		p1.additionPolynome(p2);
+
+	}
+
+}

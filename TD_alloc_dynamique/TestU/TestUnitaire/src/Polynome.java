@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Polynome {
 		private static final  int TAILLEMIN = 10; 
 		private int nbMonomes;
-		private Monome [] tab; 
+		protected Monome [] tab; 
 		
 		public Polynome () {
 			this (TAILLEMIN);
@@ -78,7 +78,7 @@ public class Polynome {
 	            ajouterMonome(coef, deg);
 
 	            Scanner sc = new Scanner(System.in);
-	            System.out.println("Voule0z vous ajouter un monome (1/0) :");
+	            System.out.println("Voulez vous ajouter un monome (1/0) :");
 	            next = Integer.parseInt(sc.nextLine());
 	        }
 			
@@ -132,6 +132,7 @@ public class Polynome {
 	            }
 	            i++;
 	        }
+	        System.out.println(res);
 	        return res; 
 		}
 	
