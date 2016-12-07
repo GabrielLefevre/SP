@@ -36,7 +36,7 @@ public class PolynomeTest {
 		return res ; 
 	}
 
-	/*@Test
+	@Test
 	public void testAjouterMonomeMonome() {
 		
 		// Test Polynome comportant 1 seul Monome
@@ -82,7 +82,7 @@ public class PolynomeTest {
 		p.ajouterMonome(new Monome (-2,1));
 		assertEquals(p.toString(),"0");
 		
-	}*/
+	}
 
 	@Test
 	public void testAjouterMonomeDoubleInt() {

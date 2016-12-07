@@ -1,0 +1,191 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class TestRationnel {
+	private static Rationnel ra;
+	@Before
+	public void setUp() throws Exception {
+		ra = new Rationnel();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testRationnel() {
+		assertNotNull(ra);
+	}
+ 
+	@Test
+	public void testRationnelIntInt() {
+		assertNotNull(new Rationnel(1,2));
+	}
+ 
+        @Test
+	public void testSetNumerateur() {
+		int nombres[] = { 10, -1, 0, 1, 7};  
+		for (int i = 0; i< nombres.length ; i++)  {
+		  ra.setNumerateur(nombres[i]);
+		  assertEquals(nombres[i], ra.getNumerateur());
+		}  
+	}
+ 
+	@Test (expected = IllegalArgumentException.class)  
+	public void testSetDenominateur() {
+		int nombres[] = { 10, 1, 3, 1, 7};  
+//		for (int i = 0; i< nombres.length ; i++)  {
+//		  ra.setDenominateur(nombres[i]);
+//		  assertEquals(nombres[i], ra.getDenominateur());
+//		}
+		
+		ra.setDenominateur(0);
+		int n = 1;
+		ra.setDenominateur(n);
+		assertEquals(n, ra.getDenominateur());
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testDenominateurNul() {	
+		Rationnel r = new Rationnel(1,0); 
+	    ra.setDenominateur(0);
+	}
+ 
+	@Test
+	public void testGetNumerateur() {
+		int nombres[] = { 10, -1, 0, 1, 7};  
+		for (int i = 0; i< nombres.length ; i++)  {
+			ra.setNumerateur(nombres[i]);
+			assertEquals(nombres[i], ra.getNumerateur());
+		}
+	}
+	
+	@Test
+	public void testGetDenominateur() {
+		int nombres[] = { 10, -1, 1, 7};  
+		for (int i = 0; i< nombres.length ; i++)  {
+			ra.setDenominateur(nombres[i]);
+			assertEquals(nombres[i], ra.getDenominateur());
+		}
+	}
+	
+	@ Test 
+	public void testSimplifier() {
+		Rationnel r = new Rationnel (2,2);
+		r.simplifier();
+		assertEquals(r.getNumerateur(),1);
+		assertEquals(r.getDenominateur(),1);
+		r = new Rationnel (-6,2);
+		r.simplifier();
+		assertEquals(r.getNumerateur(),-3);
+		assertEquals(r.getDenominateur(),1);
+		r = new Rationnel (-3,7);
+		r.simplifier();
+		assertEquals(r.getNumerateur(),-3);
+		assertEquals(r.getDenominateur(),7);
+	}
+	
+	@ Test 
+	public void testNormaliser() {
+		Rationnel r = new Rationnel (1,1);
+		r.normaliser();
+		assertEquals(r.getNumerateur(),1);
+		assertEquals(r.getDenominateur(),1);
+		r = new Rationnel (-6,-1);
+		r.normaliser();
+		assertEquals(r.getNumerateur(),6);
+		assertEquals(r.getDenominateur(),1);
+		r = new Rationnel (-3,7);
+		r.normaliser();
+		assertEquals(r.getNumerateur(),-3);
+		assertEquals(r.getDenominateur(),7);	
+		r = new Rationnel (3,-7);
+		r.normaliser();
+		assertEquals(r.getNumerateur(),-3);
+		assertEquals(r.getDenominateur(),7);	
+	}
+	
+	@Test
+	public void testComparer() {
+		Rationnel r1 = new Rationnel(1,2);
+		Rationnel r2 = null;
+		
+		assertEquals(1,r1.comparer(r2)); 
+		
+		r2 = new Rationnel(1,2);		
+		assertEquals(0,r1.comparer(r2)); 
+		
+		r2 = new Rationnel(1,3);
+		assertEquals(1,r1.comparer(r2)); 
+
+		r2 = new Rationnel(4,6);
+		assertEquals(-1,r1.comparer(r2)); 
+		
+	}
+ 
+	@Test
+	public void testtoString() {
+		// Premiere partie
+		Rationnel r = new Rationnel(1,2);
+		assertEquals("1/2",r.toString());
+		
+		r = new Rationnel(0,6);
+		assertEquals("0",r.toString());
+		
+		r = new Rationnel(0,1);
+		assertEquals("0",r.toString());		
+		
+		r = new Rationnel(5,1);
+		assertEquals("5",r.toString());
+		
+		r = new Rationnel(7,8);
+		assertEquals("7/8",r.toString());
+		
+		r = new Rationnel(-5,8);
+		assertEquals("-5/8",r.toString());
+		
+		// Deuxieme partie
+		r = new Rationnel(3,6, true);
+		assertEquals("1/2",r.toString());
+		
+		r = new Rationnel(-6,-6, true);
+		assertEquals("1",r.toString());
+		
+		r = new Rationnel(5,-10, true);
+		assertEquals("-1/2",r.toString());
+	}
+	/*
+	 1/1
+-3/1
+1/2
+1/1
+-1/2
+7/2
+-7/3
+*/
+	 
+	
+    @Test
+    public void testaddition() {
+
+        Rationnel r1 = new Rationnel(1, 2);
+        Rationnel r2 = new Rationnel(3, 4);
+
+        assertEquals("7/2", r1.addition(r2).toString());
+
+        Rationnel r3 = new Rationnel(-4, 3);
+        Rationnel r4 = new Rationnel(-2, 2);
+
+        assertEquals("-7/3", r3.addition(r4).toString());
+        
+        Rationnel r5 = null;
+        Rationnel r6 = new Rationnel(1, 2);
+
+        assertEquals("1/2", r6.addition(r5).toString());
+
+    }
+}

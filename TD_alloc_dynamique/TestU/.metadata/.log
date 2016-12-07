@@ -291,3 +291,648 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+!SESSION 2016-11-29 12:48:10.906 -----------------------------------------------
+eclipse.buildId=4.5.1.v20160217-0100
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 4 0 2016-11-29 16:05:41.621
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getSelectionFromEditorInput(SelectionUtils.java:282)
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getStructuredSelection(SelectionUtils.java:125)
+	at org.eclipse.egit.ui.internal.selection.SelectionPropertyTester.getStructuredSelection(SelectionPropertyTester.java:93)
+	at org.eclipse.egit.ui.internal.selection.SelectionPropertyTester.test(SelectionPropertyTester.java:50)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:100)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.ui.internal.handlers.HandlerActivation.evaluate(HandlerActivation.java:113)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:117)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:62)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:226)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:213)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:100)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.handlerChanged(E4HandlerProxy.java:106)
+	at org.eclipse.core.commands.AbstractHandler.fireHandlerChanged(AbstractHandler.java:80)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.access$0(HandlerProxy.java:1)
+	at org.eclipse.ui.internal.handlers.HandlerProxy$1.propertyChange(HandlerProxy.java:256)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:145)
+	at org.eclipse.ui.internal.services.EvaluationService.invalidate(EvaluationService.java:299)
+	at org.eclipse.ui.internal.services.EvaluationService.dispose(EvaluationService.java:213)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:138)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3171)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1161)
+	at org.eclipse.ui.internal.Workbench.access$21(Workbench.java:1073)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1414)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1411)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1384)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1571)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1603)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1600)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1614)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:523)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4493)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1329)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1353)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1338)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:654)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1272)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1963)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5686)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4729)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:9327)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1225)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2436)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3440)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+!SESSION 2016-12-07 08:34:06.031 -----------------------------------------------
+eclipse.buildId=4.5.1.v20160217-0100
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:11.270
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:11.701
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/collabnet-merge.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:11.788
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/eclipse-p2-discovery.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:11.880
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:12.243
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:12.369
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/e4-importer.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:12.412
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf-runtime.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:12.709
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:12.855
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-oprofile.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.022
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/packagekit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.337
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-docs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.528
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-trac.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.606
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/egit-egit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.708
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/tm-terminal.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.908
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-web.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:13.987
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-changelog.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:14.194
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:14.356
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mpc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:14.481
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/swt-chart.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:14.539
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:14.968
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-valgrind.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:15.114
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:15.211
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-context-java.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:15.281
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-context-cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:15.435
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/jgit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:15.806
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/subclipse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:15.921
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-rpm-editor.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.027
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-bugzilla.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.101
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.510
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.576
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.642
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/fedorapackager.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.748
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:16.833
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:17.133
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:17.400
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:34:17.488
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/pydev-core.
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-12-07 08:35:59.927
+!MESSAGE Could not auto-share project assertions_et_exceptions
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'assertions_et_exceptions'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-12-07 08:35:59.927
+!MESSAGE Provided SVN information does not match that on disk for project 'assertions_et_exceptions'.
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-12-07 08:38:43.333
+!MESSAGE Could not auto-share project assertions_exeptions
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'assertions_exeptions'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-12-07 08:38:43.333
+!MESSAGE Provided SVN information does not match that on disk for project 'assertions_exeptions'.
+
+!ENTRY org.eclipse.ui 4 0 2016-12-07 08:49:06.350
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getSelectionFromEditorInput(SelectionUtils.java:282)
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getStructuredSelection(SelectionUtils.java:125)
+	at org.eclipse.egit.ui.internal.selection.SelectionPropertyTester.getStructuredSelection(SelectionPropertyTester.java:93)
+	at org.eclipse.egit.ui.internal.selection.SelectionPropertyTester.test(SelectionPropertyTester.java:50)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:100)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.ui.internal.handlers.HandlerActivation.evaluate(HandlerActivation.java:113)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:117)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:62)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:226)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:213)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:100)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.handlerChanged(E4HandlerProxy.java:106)
+	at org.eclipse.core.commands.AbstractHandler.fireHandlerChanged(AbstractHandler.java:80)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.access$0(HandlerProxy.java:1)
+	at org.eclipse.ui.internal.handlers.HandlerProxy$1.propertyChange(HandlerProxy.java:256)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:145)
+	at org.eclipse.ui.internal.services.EvaluationService.invalidate(EvaluationService.java:299)
+	at org.eclipse.ui.internal.services.EvaluationService.dispose(EvaluationService.java:213)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:138)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3171)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1161)
+	at org.eclipse.ui.internal.Workbench.access$21(Workbench.java:1073)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1414)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1411)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1384)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1571)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1603)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1600)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1614)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:523)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4493)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1329)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1353)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1338)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:654)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1272)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1963)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5686)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4729)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:9327)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1225)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2436)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3440)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+!SESSION 2016-12-07 08:51:37.743 -----------------------------------------------
+eclipse.buildId=4.5.1.v20160217-0100
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:39.142
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/swt-chart.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:39.219
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-changelog.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:39.501
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:39.671
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/e4-importer.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:39.729
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/fedorapackager.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:39.889
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-rpm-editor.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:40.011
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:40.430
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-bugzilla.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:40.582
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/egit-egit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:40.712
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:40.939
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:41.245
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/collabnet-merge.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:41.328
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:41.409
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-valgrind.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:41.530
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/packagekit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:41.608
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:42.403
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:43.531
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/eclipse-p2-discovery.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:43.683
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/jgit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:43.800
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:43.885
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-web.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:44.074
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:44.363
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-trac.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:44.483
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf-runtime.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:44.708
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-oprofile.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:44.838
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-docs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.019
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/subclipse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.127
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-context-cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.208
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.338
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/tm-terminal.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.570
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-context-java.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.726
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mpc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.800
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:45.876
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:46.004
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:46.399
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/pydev-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 08:51:46.787
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2016-12-07 08:52:13.669
+!MESSAGE Could not auto-share project CC2_rationnel
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: Provided SVN information does not match that on disk for project 'CC2_rationnel'.
+	at org.tigris.subversion.subclipse.core.resources.SVNWorkspaceRoot.setSharing(SVNWorkspaceRoot.java:206)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.autoconnectSVNProject(SVNTeamProviderType.java:140)
+	at org.tigris.subversion.subclipse.core.SVNTeamProviderType$AutoShareJob.run(SVNTeamProviderType.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 4 2016-12-07 08:52:13.669
+!MESSAGE Provided SVN information does not match that on disk for project 'CC2_rationnel'.
+
+!ENTRY org.eclipse.ui 4 0 2016-12-07 10:03:25.800
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getSelectionFromEditorInput(SelectionUtils.java:282)
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getStructuredSelection(SelectionUtils.java:125)
+	at org.eclipse.egit.ui.internal.selection.SelectionPropertyTester.getStructuredSelection(SelectionPropertyTester.java:93)
+	at org.eclipse.egit.ui.internal.selection.SelectionPropertyTester.test(SelectionPropertyTester.java:50)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:100)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.ui.internal.handlers.HandlerActivation.evaluate(HandlerActivation.java:113)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService$HandlerSelectionFunction.compute(LegacyHandlerService.java:117)
+	at org.eclipse.e4.core.internal.contexts.ValueComputation.get(ValueComputation.java:62)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.internalGet(EclipseContext.java:226)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.get(EclipseContext.java:213)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.lookUpHandler(HandlerServiceImpl.java:100)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.handlerChanged(E4HandlerProxy.java:106)
+	at org.eclipse.core.commands.AbstractHandler.fireHandlerChanged(AbstractHandler.java:80)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.access$0(HandlerProxy.java:1)
+	at org.eclipse.ui.internal.handlers.HandlerProxy$1.propertyChange(HandlerProxy.java:256)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:145)
+	at org.eclipse.ui.internal.services.EvaluationService.invalidate(EvaluationService.java:299)
+	at org.eclipse.ui.internal.services.EvaluationService.dispose(EvaluationService.java:213)
+	at org.eclipse.ui.internal.services.ServiceLocator.dispose(ServiceLocator.java:138)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3171)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1161)
+	at org.eclipse.ui.internal.Workbench.access$21(Workbench.java:1073)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1414)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1411)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1384)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1571)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1603)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1600)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1614)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:523)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4493)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1329)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1353)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1338)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:654)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1272)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1963)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5686)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4729)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:9327)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1225)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2436)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3440)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+!SESSION 2016-12-07 10:28:38.443 -----------------------------------------------
+eclipse.buildId=4.5.1.v20160217-0100
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:43.410
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:43.800
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/collabnet-merge.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:43.934
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/eclipse-p2-discovery.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:44.042
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:44.463
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:44.660
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/e4-importer.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:44.699
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf-runtime.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:44.987
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.072
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-oprofile.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.200
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/packagekit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.261
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-docs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.459
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-trac.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.548
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/egit-egit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.661
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/tm-terminal.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.879
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-web.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:45.961
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-changelog.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.115
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.259
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mpc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.343
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/swt-chart.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.376
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.761
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-valgrind.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.850
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:46.948
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-context-java.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.015
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-context-cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.140
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/jgit.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.236
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/subclipse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.335
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/linuxtools-rpm-editor.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.445
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-tasks-bugzilla.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.521
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:47.813
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.009
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.069
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/fedorapackager.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.149
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.213
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.525
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.814
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-12-07 10:28:48.946
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/pydev-core.
