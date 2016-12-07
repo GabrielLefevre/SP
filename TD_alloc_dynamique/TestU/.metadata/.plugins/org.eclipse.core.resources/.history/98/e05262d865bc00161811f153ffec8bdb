@@ -3,9 +3,9 @@ package assertions_exeptions;
 import java.util.Scanner;
 
 public class exo1  {
-    public void f(int a) throws MonException {
-    	if((a<2) || (a>10)) throw new MonException("a :"+a);
-    	System.out.println(a);
+    public void f(int a) {   //throws IllegalArgumentException {
+    	if(a<2) throw new IllegalArgumentException("Probleme valeur param");
+    	System.out.println("a = " +a);
     }
     
     public void g(int a) throws MonException {

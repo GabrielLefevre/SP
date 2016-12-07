@@ -23,7 +23,7 @@ public class exo1  {
                 nonfin = false;
                 System.out.print("Entrer un nombre :");
                 val = sc.nextInt();
-                t.f(val);
+                g.f(val);
             } catch (MonException ee) {
                 System.out.println("Erreur : " + ee);
                 nonfin = true;
