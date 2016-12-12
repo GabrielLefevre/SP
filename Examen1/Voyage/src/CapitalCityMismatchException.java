@@ -2,10 +2,8 @@
 public class CapitalCityMismatchException extends Exception {
 
     CapitalCityMismatchException() {
-        super("Cette ville n'est pas une capitale européenne");
+        super();
     }
 
-    CapitalCityMismatchException(String s) {
-        super(s);
-    }
+
 }

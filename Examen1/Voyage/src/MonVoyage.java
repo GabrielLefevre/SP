@@ -33,7 +33,7 @@ public class MonVoyage {
 	     try {
 	    	 m.destination(ville);
 	     } catch (CapitalCityMismatchException e) {
-	    	 e.printStackTrace();
+	    	 System.out.println("CapitalCityMismatchException : " + ville);
 	     }
 		    
 	}
