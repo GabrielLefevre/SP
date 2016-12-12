@@ -1,9 +1,7 @@
 
 public class CapitalCityMismatchException extends Exception {
 
-    CapitalCityMismatchException() {
-        super();
+    CapitalCityMismatchException(String s) {
+        super(s);
     }
-
-
 }

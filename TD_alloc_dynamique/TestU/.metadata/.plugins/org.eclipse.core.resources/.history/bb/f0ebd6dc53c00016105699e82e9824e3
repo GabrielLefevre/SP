@@ -2,7 +2,7 @@
 public class CapitalCityMismatchException extends Exception {
 
     CapitalCityMismatchException() {
-        super();
+        super("Cette ville n'est pas une capitale européenne");
     }
 
 
